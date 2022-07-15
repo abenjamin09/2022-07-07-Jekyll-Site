@@ -80,35 +80,28 @@ insight into how consumers use non-Bellabeat smart devices. She then
 wants you to select one Bellabeat product to apply these insights to in
 your presentation. These questions will guide your analysis:
 
-1.  What are some trends in smart device usage? Users are implementing their smart devices in a variety of ways including sleep, daily intensities and weight     information. Some trends I pulled from these data sets are: users receving 6-8 average hours of sleep per night, 
-    strong correlation between average intensity and heart rate, and users not consistently logging weight information.
-2.  How could these trends apply to Bellabeat customers? Sleep patterns,
-    data correlations, and weight log information of non Bellabeat smart
-    device users will likely resemble that of Bellabeat customers, thus
-    these trends in data will inform the Bellabeat team of how to improve
-    and market the Bellabeat App or other products.
+1.  What are some trends in smart device usage? Consumers used their non-Bellabeat smart devices in a variety of ways including to track sleep, measure intensity of activity, and to log weight information.
+2.  How could these trends apply to Bellabeat customers? The way non Bellabeat smart device users use their smart devices will likely resemble that of Bellabeat users. Thus
+    analyzing these trends will allow the marketing team to better understand customers and hopefully influence the marketing strategy in a positive way. 
 3.  How could these trends help influence Bellabeat marketing strategy?
-    By leveraging the data extracted from these data sets Bellabeat will
-    be able to pinpoint the usage of smart devices and focus on
-    marketing those features to potential Bellabeat customers.
+    These trends will pinpoint the usage of smart device users and focus on
+    marketing those popular features to Bellabeat customers.
 
 *Guiding questions*
 
--   What is the problem you are trying to solve? How to gain new customers for Bellabeat smart devices through the analyzation of non bella beat smart device usage?
+-   What is the problem you are trying to solve? Understanding insights from data in order to better inform marketing strategy for Bellabeat app. 
 -   How can your insights drive business decisions? The insights
-    received from analyzing these data sets can help drive business
+    from these data sets can help drive business
     decisions like how to market the product, what features of the
-    product to improve on or do away with, and which products will be most valuable in the market.
+    product to improve or do away with, and the value of the product in the market.
 
 ### Business Task
 
 Bellabeat has hired a team of data analysts to analyze smart device
 usage data in order to gain insight into how consumers are using
-non-Bellabeat smart devices. The trends I discover in this data will
-influence marketing strategy for the Bellabeat app. These insights can
-help make business decisions like how to market the product, what
-features of the product to enhance or do
-away with, and which products will be most valuable within the market.
+non-Bellabeat smart devices. The trends I discover in this data set will help
+influence the marketing strategy for the Bellabeat app. These insights can
+help make business decisions like how to market the product, what demographic to target, and when will be the best time for running ad campaigns.
 
 # Step 2 - Prepare
 
@@ -119,26 +112,29 @@ away with, and which products will be most valuable within the market.
     users who are interested in responding provide the data. Secondly,
     the amount of data provided is from 30 users which is not a large
     enough sample size for credible data. Lastly, there are outside
-    factors which could affect data results. For example, time line, the
-    data supplied is for 2 months in the spring, however, exercise
+    factors which could affect data results. For example: time line, the
+    data supplied is for 2 months in the spring however, exercise
     habits change from season to season which may affect trends in data
     source.
 -   Does your data ROCCC? Reliable - Yes data is from Amazon a
-    trustworthy source Original - yes data comes from 30 original users
-    from a specific time period Comprehensive - No, incomplete data due
-    to low sample size Current - Data is relatively old (2016) Cited -
-    yes, Amazon Mechanical Turk
+    trustworthy source
+    Original - yes data comes from 30 original users
+    from a specific time period
+    Comprehensive - No, the data is incomplete due
+    to low sample size 
+    Current - Data is relatively old (2016) 
+    Cited - Yes the data is cited from Amazon Mechanical Turk
 -   How are you addressing licensing, privacy, security, and
     accessibility? No licensing/privacy issues because data comes from
     an open source, security is fine because no personal information is
-    used and accessibility is clear.
--   How did you verify the data’s integrity? Maintained log of
-    manipulations and kept data in one secure location
+    used and accessibility is open.
+-   How did you verify the data’s integrity? Maintained logs of
+    manipulation and kept data in one secure location
 -   How does it help you answer your question? We can use the data from
-    non Bellabeat smart device users to help understand trends in user
-    usage to influence the marketing strategy of the Bellabeat app.
--   Are there any problems with the data? Missing data, outliers, and
-    light format issues.
+    smart device users to help understand trends in
+    usage and influence the marketing strategy of the Bellabeat app.
+-   Are there any problems with the data? In this data set there is missing data, outliers, and
+    light formatting issues.
 
 ## Description of Data Sources
 
@@ -153,16 +149,16 @@ steps, and heart rate that can be used to explore users’ habits.
 
 # Step 3 - Process
 
--   What tools are you choosing and why? Excel and R for data
-    cleaning/visualizations and tableau for a dashboard.
--   Have you ensured your data’s integrity? Throughout my process I will
-    log updates/changes to data sets.
--   What steps have you taken to ensure that your data is clean? Check
-    formatting, blank cells, extra white spaces, misspellings, and
+-   What tools are you choosing and why? I chose Excel and R for data
+    cleaning and visualizations and tableau for a dashboard.
+-   Have you ensured your data’s integrity? Yes, throughout my process I
+    logged updates and changes to these data sets.
+-   What steps have you taken to ensure that your data is clean? In order to ensure that my data is clean: I checked
+    formatting, blank cells, white spaces, misspellings, and
     duplicates.
 -   How can you verify that your data is clean and ready to analyze?
-    Ensuring that formatting is correct, remove/update missing data, and
-    check for misspellings and flaws.
+    I verified that my data was clean and ready by ensuring that the formatting was correct, removed/updated any missing data, and
+    checked for misspellings.
 -   Have you documented your cleaning process so you can review and
     share those results? Yes
 
@@ -191,7 +187,7 @@ hourlyIntensities_data <- read.csv("/cloud/project/capstone project/R Projects/h
 
 ## View datasets
 
-Next, I viewed the head of these data sets
+Next, I viewed the heads of these data sets
 
 ``` r
 glimpse(sleep_data)
@@ -250,16 +246,14 @@ glimpse(hourlyIntensities_data)
 
 ## Check for structural errors
 
-first issue I see is that columns SleepDay, Date, Time, and ActivityHour
-all have character format instead of datetime, I will change these
-values to the correct format. Beginning with weightLog_data.
+The first structural error I noticed was in SleepDay, Date, Time, and ActivityHour.
+These columns were all formatted in character instead of datetime. I changed the formatting. 
 
 ``` r
 weightLog_data[['Date']] <- as.POSIXct(strptime(weightLog_data[['Date']], "%m/%d/%Y %H:%M"), format = "%Y/%m/%d %I:%M %p")
 ```
 
-I will then repeat these steps for sleep_data, heartrate, and
-hourly_intensities
+I repeated these steps for sleep_data and heartrate_data. 
 
 ``` r
 sleep_data[["SleepDay"]] <- as.POSIXct(strptime(sleep_data[["SleepDay"]], "%m/%d/%Y %H:%M:%S %p"), format = "%Y/%m/%d %I:%M:%S %p")
@@ -269,7 +263,7 @@ sleep_data[["SleepDay"]] <- as.POSIXct(strptime(sleep_data[["SleepDay"]], "%m/%d
 heartrate_data[["Time"]] <- as.POSIXct(strptime(heartrate_data[["Time"]],format="%m/%d/%Y %H:%M:%S %p"), format = "%Y/%m/%d %H:%M:%S %p")
 ```
 
-I decided to ommit hourly_intensities and instead update format below. This was due to an error in the order of which I ran code.
+After working further, I decided to ommit hourly_intensities and instead update its format later. This was due to specifying the class in later code.
 
 ## Check for irregularities
 
@@ -302,38 +296,36 @@ summary(sleep_data)
     ##  Max.   :46.00                       
     ##  NA's   :2
 
-In TotalMinutesAsleep Min value is less than an
-hour and Max value higher than 13 hours. Also, total sleep records for
-some users is greater than 1. I will remove these instances. To remove
-these outliers from TotalMinutesAsleep and TotalTimeinBed
+I noticed in TotalMinutesAsleep a minimum value of less than an
+hour and a maximum value higher than 13 hours. I removed these outliers to prevent skews in data. 
 
 ``` r
 sleep_data <- sleep_data[-c(which(sleep_data$TotalMinutesAsleep > 552 | sleep_data$TotalMinutesAsleep < 180 | sleep_data$TotalTimeInBed > 660)), ]
 ```
 
-Remove rows where users recorded sleep records more than once a day
-$TotalSleepRecords \> 1
-
+In addition, total sleep records for some users is greater than 1. I decided to remove these instances.
 ``` r
 sleep_data <- sleep_data[-c(which(sleep_data$TotalSleepRecords > 1.0)), ]
 ```
 
 ## Cleaning and Filtering
 
-**Step 1: **heartrate_data** heartrate_data is a very large data set so I
-filter ‘heartrate_data’ to contain data for user_6 only
+**Step 1: Heartrate Data** 
+
+Heartrate_data is a very large data set. I
+filtered to contain data for user_6 only,
 
 ``` r
 heartrate_data <- filter(heartrate_data, heartrate_data$Id == "2022484408")
 ```
 
-and then filter for date
+filtered the date,
 
 ``` r
 heartrate_data <- heartrate_data %>% filter(grepl('4/12/2016', heartrate_data$Time))
 ```
 
-and then re label Id to user_6
+and relabeled Id to user_6.
 
 ``` r
 heartrate_data$Id[heartrate_data$Id == "2022484408"] <- "user_6"
@@ -341,9 +333,9 @@ heartrate_data$Id[heartrate_data$Id == "2022484408"] <- "user_6"
 
 **Step 2: Sleep Data**
 
-First, I notice is that Id column contains number values to identify
-users and I would like to add a new category which correlates these
-number values to character values user_1 through user_33.
+In sleep data I noticed that the Id column contains number values to identify
+users. I created a column which correlates these
+number values to user_1 through user_33.
 
 ``` r
 sleep_data <- purrr::map2_df(
@@ -359,16 +351,16 @@ sleep_data <- purrr::map2_df(
   dplyr::relocate(User,.after = Id)
 ```
 
-convert TotalMinutesAsleep to TotalHoursAsleep, apply TotalHoursAsleep
-to sleep_data
+I then converted TotalMinutesAsleep to hours and added TotalHoursAsleep
+to sleep_data.
 
 ``` r
 TotalHoursAsleep <- sleep_data$TotalMinutesAsleep/60
 sleep_data$TotalHoursAsleep <- TotalHoursAsleep
 ```
 
-mean hours asleep for each user, rename TotalHoursAsleep to
-avghoursasleep
+I averaged out the hours of sleep for each user and renamed TotalHoursAsleep to
+avg_hours_asleep.
 
 ``` r
 sleep_datatwo <- aggregate(TotalHoursAsleep ~ User, sleep_data, mean)
@@ -377,34 +369,36 @@ sleep_datatwo <- sleep_datatwo %>%
     avg_hours_asleep = TotalHoursAsleep)
 ```
 
-**Step 3: hourlyIntensities_data** filter hourlyIntensities_data for
-user_6 and 4/12/2016
+**Step 3: Hourly Intensities Data** 
+
+I filtered hourlyIntensities_data to contain only user_6 on 4/12/2016.
 
 ``` r
 hourlyIntensities_data <- filter(hourlyIntensities_data, Id == "2022484408", grepl('4/12/2016', ActivityHour)) %>%
   mutate(Id = recode(Id, "2022484408" = "user_6"))
 ```
 
-remove first 10 characters from ActivityHour column
+I removed the first 10 characters from the ActivityHour column.
 
 ``` r
 hourlyIntensities_data$ActivityHour <- str_sub(hourlyIntensities_data$ActivityHour, 11, 21)
 ```
 
-remove :00 from hourlyIntensities_data$ActivityHour
+Next I removed :00 from hourlyIntensities_data$ActivityHour.
 
 ``` r
 hourlyIntensities_data$ActivityHour <- gsub(':00 '," ", hourlyIntensities_data$ActivityHour)
 ```
 
-create x axis limits then use scale_x\_discrete to create plot
+Then created x axis limits and use scale_x_discrete to create plot
 
 ``` r
 axisorder <- c("7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM","1:00 PM","2:00 PM",
                "3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM")
 ```
 
-convert ActivityHour to posixct
+
+I converted ActivityHour to posixct
 
 ``` r
 hourlyIntensities_data$ActivityHour <- structure(c(1653782400, 1653786000, 1653789600, 1653793200, 1653796800, 
@@ -413,10 +407,11 @@ hourlyIntensities_data$ActivityHour <- structure(c(1653782400, 1653786000, 16537
 1653843600, 1653847200, 1653850800, 1653854400, 1653858000, 1653861600, 
 1653865200), class = c("POSIXct", "POSIXt"), tzone = "")
 ```
+**Note:** the above conversion to posixct would normally be in structural errors section.
 
 **Step 4: Weight Log Data**
 
-find number of times each user used Weight Log
+I found the number of times each user used the weight log feature
 
 ``` r
 table(weightLog_data$Id)
@@ -428,7 +423,7 @@ table(weightLog_data$Id)
     ## 8877689391 
     ##         24
 
-create data frame with info
+and created a data frame with this information. 
 
 ``` r
 id <- as.factor(c('user_01','user_05','user_10','user_15','user_18','user_21','user_25','user_33'))
@@ -438,78 +433,51 @@ repeated_users <- data.frame(id, times_used)
 
 # Step 4 - Analyze
 
--   How should you organize your data to perform analysis on it? Load
-    data sets into R which will be used for analyzation. Update
-    time/date formats for R processing, and organize by user instead of
-    number string.
--   Has your data been properly formatted? yes
--   What surprises did you discover in the data? Plenty of missing
-    data/outliers and weight log data was very lightly used.
--   What trends or relationships did you find in the data? Sleep users
-    are typically getting in the range of 6 – 8 hours of sleep a night
-    (with exception of a few below and above.) Heart rate and Average
-    Intensity are strongly correlated.
+-   How should you organize your data to perform analysis on it? I updated
+    time/date formats and organized by user id instead of number strings.
+-   Has your data been properly formatted? My data is formatted properly.
+-   What surprises did you discover in the data? In the data there were plenty of missing
+    values and the weight log data section was very lightly used.
+-   What trends or relationships did you find in the data? I found that sleep users
+    are typically getting in the range of 6 – 8 hours of sleep per night
+    and heart rate/average intensity are strongly correlated.
 -   How will these insights help answer your business questions?
-    Understanding how users are implementing their smart devices within their daily routine is vital for product strength. After better understanding sleep routines, 
-    athletic intensities, and where users may be letting down their smart device useage, we as a team are better able to understand how to market the product. 
+    Understanding how users are using their smart devices is vital for product growth. After drawing insights into how non Bellabeat smart device users are using their smart devices, 
+    the Bellabeat marketing team will have better direction for its marketing strategy. 
 
 ## Summary of Analysis
 
-After reviewing these data sets I have discovered three major trends.
-First is from the sleepday_merged data set. Here, I analyzed the average
-hours of sleep each user is getting per night, from March 12 through
-April 12. After dropping outliers and analyzing the data it is apparent
-that users are getting between 6 to 8 hours of sleep. My second
-analyzation was of the heartrate_seconds_merged and
-hourlyntensity_merged data sets. After analyzing data for user 6 on
-4/12/16, it is noticeable the effect that average intensity has on heart
+After reviewing these data sets I discovered three major trends.
+First, users are getting anywhere between 6 to 8 hours of sleep per night. This is shown in sleep data for twenty users from March 12 to April 12. Next, in the heartrate and
+hourly intensities data sets I noticed the correlation between hourly intensity and heart
 rate. These two variables are strongly correlated with a correlation
-coefficient of **0.878**. My last analysis was of weight log
-information. Trends in this data set show that many users are not
-logging their weight information.
+coefficient of **0.878**. Lastly, trends in weightLog_data prove that many users are not consistently 
+logging weight information.
 
 # Step 5 - Share
 
--   Were you able to answer the business questions? Yes, After analyzing
-    trends in sleep, heart rate and intensity, and weight log our
-    business question, “how can we use trends in data from non Bellabeat
-    smart device users to inform the marketing strategy of one Bellabeat
-    product: Bellabeat app?” has been answered. We can use the
-    information on sleep data to market our apps potential of monitoring
-    sleep and creating alarms to notify you of when prime times of
-    sleep/awake are. In addition to this the Bellabeat team must add
-    value to weight log in order to create additional features to use
-    within the app that are currently being let down. Thirdly after
-    monitoring intensity and heart rate it is clear to see correlations
-    and this is a steady of example of two data inputs that could be
-    combined for graphs within the app.
--   What story does your data tell? The data gives us insight into how
-    smart device users are using the product, their own personal
-    sleep/exercise habits, and how we can implement these trends into
-    our own product to create success for Bellabeat.
--   How do your findings relate to your original question? Lack of
-    weight information shows a weak point in measuring data and a way to
-    better our product, sleep data shows a way to create value within
-    the Bellabeat app, intensity and heart rate data is a good way to
-    help target a niche of customers who will have value added to their
-    lives by purchasing Bellabeat product.
+-   Were you able to answer the business questions? Yes, I was able to better guide marketing strategy after drawing insights from 
+    trends in the data sets. 
+-   What story does your data tell? The data story shares how
+    smart device users are utilizing their products.
+-   How do your findings relate to your original question? The findings answer the original question, "How are non Bellabeat smart device users utilizing their devices?" These users are utilizing trackers, graphs, and logs in their smart devices. 
 -   Who is your audience? What is the best way to communicate with them?
-    Audience is a marketing team within Bellabeat, best way to
-    communicate with them is through presentation.
+    My audience is key stakeholders and the best way to
+    communicate with them is through effective presentation.
 -   Can data visualization help you share your findings? Yes, data
-    visualizations are key for expressing findings from the analysis.
--   Is your presentation accessible to your audience? Yes presentation
-    is accessible to audience
+    visualizations are key for displaying results from an analysis.
+-   Is your presentation accessible to your audience? No, the presentation
+  is for stakeholders. 
 
 ## Visualizations and Key Findings
 
 ### Sleep Patterns
 
-This visualization represents sleep patterns of users. I have decided to
+This visualization represents sleep patterns of users. I decided to
 drop data from user 4 and user 18 due to unrealistic sleep times. 22 of
 33 users were included in this data set due to lack of input data.
 
-My first analysis will be of sleepDay_merged data. I want to analyze
+My first analysis pertained to sleepDay_merged data. I wanted to analyze
 normal amount of sleep per user from April to May of 2016.
 
 ![Sleep Patterns](/assets/images/sleep_data_update2.jpg){:class="img-responsive"}
@@ -525,7 +493,7 @@ ggplot(data=sleep_datatwo, aes(x=User,y=avg_hours_asleep, group=1)) +
 
 ### Heart Rate vs Average Intensity
 
-Next, I visualized the data from user 6 on 2016-04-16 from 7AM to 8PM to
+After that, I visualized the data from user 6 on 2016-04-16 from 7AM to 8PM to
 show how his heart rate varied along with his average intensity. The
 graphs look similar indicating a strong relationship. This relationship
 is reinforced by a correlation coefficient of **0.878** measured between
@@ -563,10 +531,10 @@ heartrate_data %>%
 
 ### Weight Log
 
-My third visualization is indicating a lack of data entry in weight log
+My final visualization is indicating a lack of data entry in weight log
 information. The number of users that logged weight information is very
-small, with many of them logging less than 5 times for the entire month.
-I am assuming this has to do with weight scales not being available,
+small with many of them logging less than 5 times for the entire month.
+I assumed this has to do with weight scales not being available,
 lack of knowledge on how to measure BMI, or inconveniences in entering
 data.
 
@@ -581,8 +549,8 @@ ggplot(data = repeated_users, aes(x = id, y = times_used)) +
 
 ### Summary Statistics: Sleep Patterns
 
-I have decided to create summary statistics for users 5, 13, and 17 in
-order to analyze specifics of nightly sleep schedules (in hours.) The users were
+I decided to create summary statistics for users 5, 13, and 17 in
+order to analyze specifics of nightly sleep schedules. The users were
 chosen at random to avoid bias.
 
 filter sleep data for user_5
@@ -630,26 +598,15 @@ summary(sleepday_User5$TotalHoursAsleep)
 
 **Guiding questions**
 
--   What is your final conclusion based on your analysis? After
-    analyzing sleep, intensity, heart rate, and weight log data it is
-    evident that there are ways to improve upon the Bellabeat product of
-    choice: Bellabeat app. From this analysis adding features such as
-    graphs, alarms, and weight log abilities will allow the Bellabeat
-    App to add further value to users and thus increase
-    marketability.
--   How could your team and business apply your insights? Add graphs,
-    accessability for weight log data, and alarms
+-   What is your final conclusion based on your analysis? After analyzing these data sets, the usage of smart devices amongst non Bellabeat consumers has become evident. 
+    The marketing strategy for the Bellabeat App should take these uses into consideration.     
+-   How could your team and business apply your insights? Take these insights into consideration when developing marketing strategy.
 -   What next steps would you or your stakeholders take based on your
-    findings? take findings to development team and then begin new
-    marketing strategy
--   Is there additional data you could use to expand on your findings? Need more data on non spring/summer months. Expanded into winter/fall to account for bias. 
+    findings? Implement these insights into a productive marketing campaign. 
+-   Is there additional data you could use to expand on your findings? The majority of data was taken in the summer months which could create bias, more data based in winter and fall months would be useful.
 
 ### Insights and Recommendations
 
-To influence sales and usage of the Bellabeat app the company will need
-to implement graphs of sleep, heart rate, intensity, and similar data
-within the app. Routine sleep notifications to alert users of when to go
-to sleep to obtain 6-8 hours of sleep will be beneficial as this is the
-average amount of sleep seen for users within the data set. Lastly, It
-will be beneficial for the company to find ways in which users can
-easily log weight data as this is a point of concern within our data.
+To better market the Bellabeat app the marketing team will need to focus on the core uses and strengths that were found in our analysis. Focusing the marketing strategy on the key features which 
+Bellabeat users will use day to day will add the most value to our campaign. In our analysis we see that users are tracking sleep, daily activity, and logging information such as weight. Advertising these 
+features will allow customers to gain an understanding of the product making it more likely for them to consider purchasing the product. 
