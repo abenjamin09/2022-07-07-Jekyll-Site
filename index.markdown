@@ -541,7 +541,7 @@ summary(sleepday_User5$TotalHoursAsleep)
 
 **Guiding questions**
 
--   What is your final conclusion based on your analysis? The Bellabeat marketing team should focus on the core uses and features that were seen in our analysis. Better understanding of these features, development, and marketing will allow the Bellabeat app and other products to grow within the market.    
+-   What is your final conclusion based on your analysis? The Bellabeat marketing team should focus on the core uses and features that were found in our analysis. Better understanding of these features, development, and marketing will allow the Bellabeat app and other products to grow within the market.    
 -   How could your team and business apply your insights? Push marketing strategy in the direction of key uses and features that were found in this report.
 -   What next steps would you or your stakeholders take based on your
     findings? The next step would be to implement these insights into a productive marketing campaign. 
@@ -549,4 +549,6 @@ summary(sleepday_User5$TotalHoursAsleep)
 
 ### Insights and Recommendations
 
-In conclusion, the core uses and features of smart devices have become evident, the way in which they relate back to Bellabeat customers is clear, and how to direct the marketing strategy for the Bellabeat App is developed. In order to market the Bellabeat App the marketing team should focus on bringing the strengths of the product to light with the customer. This will allow customers to gain an understanding of the product and relate it back to what they need in their lives, making them more likely to purchase the Bellabeat App and other Bellabeat products in the future. 
+To better market the Bellabeat app the marketing team will need to focus on the core uses and strengths that were found in our analysis. Focusing the marketing strategy on the key features which 
+Bellabeat users will use day to day will add the most value to our campaign. In our analysis we see that users are tracking sleep, daily activity, and logging information such as weight. Advertising these 
+features will allow customers to gain an understanding of the product making it more likely for them to consider purchasing the product.
