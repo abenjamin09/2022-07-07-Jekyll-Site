@@ -22,56 +22,9 @@ library(tidyverse)
 * TOC 
 {:toc}
 
-# Introduction
+# Brief Introduction
+I am working as a Marketing Analyst for a company named Bellabeat, a high-tech manufacturer of health-focused products for women. The data set my stakeholder, Sršen, has provided me represents smart device users who are <span style="text-decoration: underline">**not**</span> using Bellabeat products. My job is to draw insights from this data and answer the questions below.
 
-Welcome to the Bellabeat data analysis case study! In this case study,
-you will perform many real-world tasks of a junior data analyst. You
-will imagine you are working for Bellabeat, a high-tech manufacturer of
-health-focused products for women, and meet different characters and
-team members. In order to answer the key business questions, you will
-follow the steps of the data analysis process: ask, prepare, process,
-analyze, share, and act. Along the way, the Case Study Roadmap tables —
-including guiding questions and key tasks — will help you stay on the
-right path. By the end of this lesson, you will have a portfolio-ready
-case study. Download the packet and reference the details of this case
-study anytime. Then, when you begin your job hunt, your case study will
-be a tangible way to demonstrate your knowledge and skills to potential
-employers
-
-# Characters and products
-
--   Characters
-    -   Urška Sršen: Bellabeat’s cofounder and Chief Creative Officer
-    -   Sando Mur: Mathematician and Bellabeat’s cofounder; key member
-        of the Bellabeat executive team
-    -   Bellabeat marketing analytics team: A team of data analysts
-        responsible for collecting, analyzing, and reporting data that
-        helps guide Bellabeat’s marketing strategy. You joined this team
-        six months ago and have been busy learning about Bellabeat’’s
-        mission and business goals — as well as how you, as a junior
-        data analyst, can help Bellabeat achieve them.
--   Products
-    -   Bellabeat app: The Bellabeat app provides users with health data
-        related to their activity, sleep, stress, menstrual cycle, and
-        mindfulness habits. This data can help users better understand
-        their current habits and make healthy decisions. The Bellabeat
-        app connects to their line of smart wellness products.
-    -   Leaf: Bellabeat’s classic wellness tracker can be worn as a
-        bracelet, necklace, or clip. The Leaf tracker connects to the
-        Bellabeat app to track activity, sleep, and stress.
-    -   Time: This wellness watch combines the timeless look of a
-        classic timepiece with smart technology to track user activity,
-        sleep, and stress. The Time watch connects to the Bellabeat app
-        to provide you with insights into your daily wellness.
-    -   Spring: This is a water bottle that tracks daily water intake
-        using smart technology to ensure that you are appropriately
-        hydrated throughout the day. The Spring bottle connects to the
-        Bellabeat app to track your hydration levels.
-    -   Bellabeat membership: Bellabeat also offers a subscription-based
-        membership program for users. Membership gives users 24/7 access
-        to fully personalized guidance on nutrition, activity, sleep,
-        health and beauty, and mindfulness based on their lifestyle and
-        goals.
 
 # Step 1 - Ask
 
@@ -80,60 +33,57 @@ insight into how consumers use non-Bellabeat smart devices. She then
 wants you to select one Bellabeat product to apply these insights to in
 your presentation. These questions will guide your analysis:
 
-1.  What are some trends in smart device usage? Consumers used their non-Bellabeat smart devices in a variety of ways including to track sleep, measure intensity of activity, and to log weight information.
+1.  What are some trends in smart device usage? Consumers use their smart devices in a variety of ways including to track sleep, measure intensity of activity, and to log weight information.
 2.  How could these trends apply to Bellabeat customers? The way non Bellabeat smart device users use their smart devices will likely resemble that of Bellabeat users. Thus
-    analyzing these trends will allow the marketing team to better understand customers and hopefully influence the marketing strategy in a positive way. 
+    analyzing these trends will allow the marketing team to better understand potential Bellabeat customers.
 3.  How could these trends help influence Bellabeat marketing strategy?
-    These trends will pinpoint the usage of smart device users and focus on
-    marketing those popular features to Bellabeat customers.
+    These trends will pinpoint the usage of smart devices and help focus
+    marketing those strengths to future Bellabeat customers.
 
 *Guiding questions*
 
--   What is the problem you are trying to solve? Understanding insights from data in order to better inform marketing strategy for Bellabeat app. 
+-   What is the problem you are trying to solve? Understanding insights from data in order to better inform marketing strategy for the Bellabeat app.
 -   How can your insights drive business decisions? The insights
     from these data sets can help drive business
-    decisions like how to market the product, what features of the
-    product to improve or do away with, and the value of the product in the market.
+    decisions because they represent important business insights like how people use their products, demographic, and time stamps.
 
 ### Business Task
 
 Bellabeat has hired a team of data analysts to analyze smart device
 usage data in order to gain insight into how consumers are using
 non-Bellabeat smart devices. The trends I discover in this data set will help
-influence the marketing strategy for the Bellabeat app. These insights can
-help make business decisions like how to market the product, what demographic to target, and when will be the best time for running ad campaigns.
+influence the marketing strategy for the Bellabeat app. 
 
 # Step 2 - Prepare
 
--   Where is your data stored? Excel
--   How is the data organized? Is it in long or wide format? Long
--   Are there issues with bias or credibility in this data? Yes, there
-    are issues with bias and credibility because it is a survey, so only
+-   Where is your data stored? My data is stored in Excel.
+-   How is the data organized? Is it in long or wide format? My data is organized in long format. 
+-   Are there issues with bias or credibility in this data? Yes there
+    are issues with bias and credibility because it is a survey. The bias comes to play becasuse only
     users who are interested in responding provide the data. Secondly,
     the amount of data provided is from 30 users which is not a large
     enough sample size for credible data. Lastly, there are outside
     factors which could affect data results. For example: time line, the
-    data supplied is for 2 months in the spring however, exercise
+    data supplied is for 2 months in the spring, however, exercise
     habits change from season to season which may affect trends in data
     source.
--   Does your data ROCCC? Reliable - Yes data is from Amazon a
-    trustworthy source
-    Original - yes data comes from 30 original users
-    from a specific time period
-    Comprehensive - No, the data is incomplete due
-    to low sample size 
-    Current - Data is relatively old (2016) 
-    Cited - Yes the data is cited from Amazon Mechanical Turk
+-   Does your data ROCCC? The data is <span style="text-decoration: underline">**reliable**</span> and is from a
+    trustworthy source.
+    The data is <span style="text-decoration: underline">**original**</span> because it comes from 30 original users.
+    The data is <span style="text-decoration: underline">**not comprehensive**</span> due
+    to low sample size.
+    The data is <span style="text-decoration: underline">**not current**</span> rather it is relatively old (2016).
+    The data is <span style="text-decoration: underline">**cited**</span> from Amazon Mechanical Turk.
 -   How are you addressing licensing, privacy, security, and
-    accessibility? No licensing/privacy issues because data comes from
+    accessibility? There are no licensing or privacy issues because data comes from
     an open source, security is fine because no personal information is
-    used and accessibility is open.
--   How did you verify the data’s integrity? Maintained logs of
-    manipulation and kept data in one secure location
+    used, and accessibility is open.
+-   How did you verify the data’s integrity? In order to mantain integrity logs of
+    manipulation were maintained and data was kept in one secure location.
 -   How does it help you answer your question? We can use the data from
     smart device users to help understand trends in
     usage and influence the marketing strategy of the Bellabeat app.
--   Are there any problems with the data? In this data set there is missing data, outliers, and
+-   Are there any problems with the data? Yes, in this data set there is missing data, outliers, and
     light formatting issues.
 
 ## Description of Data Sources
@@ -153,14 +103,14 @@ steps, and heart rate that can be used to explore users’ habits.
     cleaning and visualizations and tableau for a dashboard.
 -   Have you ensured your data’s integrity? Yes, throughout my process I
     logged updates and changes to these data sets.
--   What steps have you taken to ensure that your data is clean? In order to ensure that my data is clean: I checked
+-   What steps have you taken to ensure that your data is clean? In order to ensure that my data is clean I checked
     formatting, blank cells, white spaces, misspellings, and
     duplicates.
 -   How can you verify that your data is clean and ready to analyze?
-    I verified that my data was clean and ready by ensuring that the formatting was correct, removed/updated any missing data, and
+    I verified that my data was clean and ready to analyze by ensuring that the formatting was correct. I removed and updated missing data and
     checked for misspellings.
 -   Have you documented your cleaning process so you can review and
-    share those results? Yes
+    share those results? Yes, see next section.
 
 # Documented Cleaning Process
 
@@ -407,7 +357,6 @@ hourlyIntensities_data$ActivityHour <- structure(c(1653782400, 1653786000, 16537
 1653843600, 1653847200, 1653850800, 1653854400, 1653858000, 1653861600, 
 1653865200), class = c("POSIXct", "POSIXt"), tzone = "")
 ```
-**Note:** the above conversion to posixct would normally be in structural errors section.
 
 **Step 4: Weight Log Data**
 
@@ -442,43 +391,39 @@ repeated_users <- data.frame(id, times_used)
     are typically getting in the range of 6 – 8 hours of sleep per night
     and heart rate/average intensity are strongly correlated.
 -   How will these insights help answer your business questions?
-    Understanding how users are using their smart devices is vital for product growth. After drawing insights into how non Bellabeat smart device users are using their smart devices, 
-    the Bellabeat marketing team will have better direction for its marketing strategy. 
+    After drawing insights from smart device users, 
+    the Bellabeat marketing team will be able to better understand customers and have a better direction for marketing strategy. 
 
 ## Summary of Analysis
 
 After reviewing these data sets I discovered three major trends.
-First, users are getting anywhere between 6 to 8 hours of sleep per night. This is shown in sleep data for twenty users from March 12 to April 12. Next, in the heartrate and
-hourly intensities data sets I noticed the correlation between hourly intensity and heart
-rate. These two variables are strongly correlated with a correlation
-coefficient of **0.878**. Lastly, trends in weightLog_data prove that many users are not consistently 
+1) users are getting anywhere between 6 to 8 hours of sleep per night. This is shown in sleep data for twenty users from March 12 to April 12. 
+2) Within the heart rate and
+hourly intensities data sets I noticed correlation between hourly intensity and heart
+rate. These variables are strongly correlated with a correlation
+coefficient of 0.878. 
+3) the trends in weightLog_data prove that many users are not consistently 
 logging weight information.
 
 # Step 5 - Share
 
--   Were you able to answer the business questions? Yes, I was able to better guide marketing strategy after drawing insights from 
-    trends in the data sets. 
+-   Were you able to answer the business questions? Yes, the trends in non Bellabeat smart device users were discovered, the way in which these trends relate back to Bellabeat customers were defined, lastly the marketing strategy for the Bellabeat Team was guided. 
 -   What story does your data tell? The data story shares how
-    smart device users are utilizing their products.
--   How do your findings relate to your original question? The findings answer the original question, "How are non Bellabeat smart device users utilizing their devices?" These users are utilizing trackers, graphs, and logs in their smart devices. 
+    non-Bellabeat smart device users are using their products.
+-   How do your findings relate to your original question? The findings from these dats sets help define how potential Bellabeat customers are using smart devices, this will help direct the marketing strategy for the Bellabeat App. 
 -   Who is your audience? What is the best way to communicate with them?
     My audience is key stakeholders and the best way to
     communicate with them is through effective presentation.
 -   Can data visualization help you share your findings? Yes, data
     visualizations are key for displaying results from an analysis.
--   Is your presentation accessible to your audience? No, the presentation
-  is for stakeholders. 
+-   Is your presentation accessible to your audience? Yes, the presentation is available for stakeholders. 
 
 ## Visualizations and Key Findings
 
 ### Sleep Patterns
 
-This visualization represents sleep patterns of users. I decided to
-drop data from user 4 and user 18 due to unrealistic sleep times. 22 of
-33 users were included in this data set due to lack of input data.
-
-My first analysis pertained to sleepDay_merged data. I wanted to analyze
-normal amount of sleep per user from April to May of 2016.
+My first analysis is from sleepDay_merged data. I analyzed
+normal amounts of sleep per user from April to May of 2016.
 
 ![Sleep Patterns](/assets/images/sleep_data_update2.jpg){:class="img-responsive"}
 
@@ -493,10 +438,10 @@ ggplot(data=sleep_datatwo, aes(x=User,y=avg_hours_asleep, group=1)) +
 
 ### Heart Rate vs Average Intensity
 
-After that, I visualized the data from user 6 on 2016-04-16 from 7AM to 8PM to
-show how his heart rate varied along with his average intensity. The
+Next, I visualized the data from user 6 on 2016-04-16 from 7AM to 8PM to
+show how heart rate varied along with average intensity. The
 graphs look similar indicating a strong relationship. This relationship
-is reinforced by a correlation coefficient of **0.878** measured between
+is reinforced by a correlation coefficient of **0.878** between
 heart rate and average intensity.
 
 ![Heart Rate Plot](/assets/images/heart_rate_plot_final.jpg)
@@ -532,11 +477,9 @@ heartrate_data %>%
 ### Weight Log
 
 My final visualization is indicating a lack of data entry in weight log
-information. The number of users that logged weight information is very
+information. The number of users that logged weight log information is very
 small with many of them logging less than 5 times for the entire month.
-I assumed this has to do with weight scales not being available,
-lack of knowledge on how to measure BMI, or inconveniences in entering
-data.
+
 
 ![Weight Log plot](/assets/images/file_show.jpg)
 
@@ -598,15 +541,12 @@ summary(sleepday_User5$TotalHoursAsleep)
 
 **Guiding questions**
 
--   What is your final conclusion based on your analysis? After analyzing these data sets, the usage of smart devices amongst non Bellabeat consumers has become evident. 
-    The marketing strategy for the Bellabeat App should take these uses into consideration.     
--   How could your team and business apply your insights? Take these insights into consideration when developing marketing strategy.
+-   What is your final conclusion based on your analysis? The Bellabeat marketing team should focus on the core uses and features that were seen in our analysis. Better understanding of these features, development, and marketing will allow the Bellabeat app and other products to grow within the market.    
+-   How could your team and business apply your insights? Push marketing strategy in the direction of key uses and features that were found in this report.
 -   What next steps would you or your stakeholders take based on your
-    findings? Implement these insights into a productive marketing campaign. 
+    findings? The next step would be to implement these insights into a productive marketing campaign. 
 -   Is there additional data you could use to expand on your findings? The majority of data was taken in the summer months which could create bias, more data based in winter and fall months would be useful.
 
 ### Insights and Recommendations
 
-To better market the Bellabeat app the marketing team will need to focus on the core uses and strengths that were found in our analysis. Focusing the marketing strategy on the key features which 
-Bellabeat users will use day to day will add the most value to our campaign. In our analysis we see that users are tracking sleep, daily activity, and logging information such as weight. Advertising these 
-features will allow customers to gain an understanding of the product making it more likely for them to consider purchasing the product. 
+In conclusion, the core uses and features of smart devices have become evident, the way in which they relate back to Bellabeat customers is clear, and how to direct the marketing strategy for the Bellabeat App is developed. In order to market the Bellabeat App the marketing team should focus on bringing the strengths of the product to light with the customer. This will allow customers to gain an understanding of the product and relate it back to what they need in their lives, making them more likely to purchase the Bellabeat App and other Bellabeat products in the future. 
