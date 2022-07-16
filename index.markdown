@@ -407,7 +407,7 @@ logging weight information.
 
 # Step 5 - Share
 
--   Were you able to answer the business questions? Yes, the trends in non Bellabeat smart device users were discovered, the way in which these trends relate back to Bellabeat customers were defined, lastly the marketing strategy for the Bellabeat Team was guided. 
+-   Were you able to answer the business questions? Yes, the trends in non Bellabeat smart device users were discovered, the way in which these trends relate back to Bellabeat customers were defined, and lastly the marketing strategy for the Bellabeat Team was guided. 
 -   What story does your data tell? The data story shares how
     non-Bellabeat smart device users are using their products.
 -   How do your findings relate to your original question? The findings from these dats sets help define how potential Bellabeat customers are using smart devices, this will help direct the marketing strategy for the Bellabeat App. 
