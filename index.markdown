@@ -23,7 +23,7 @@ library(tidyverse)
 {:toc}
 
 # Brief Introduction
-I am working as a Marketing Analyst for a company named Bellabeat, a high-tech manufacturer of health-focused products for women. The data set my stakeholder, Sršen, has provided me represents smart device users who are <span style="text-decoration: underline">**not**</span> using Bellabeat products. My job is to draw insights from this data and answer the questions below.
+I am working as a Marketing Analyst for a company named Bellabeat, a high-tech manufacturer of health-focused products for women. The data set my stakeholder, Sršen, has provided me represents smart device users who are not using Bellabeat products. My job is to draw insights from this data and answer the questions below.
 
 
 # Step 1 - Ask
